@@ -1,8 +1,8 @@
 {
   "layer": "top",
-    "modules-left": ["custom/arch", "hyprland/window", "custom/spotify"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "network", "battery", "pulseaudio", "clock"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": ["tray", "custom/arch", "network", "battery", "pulseaudio", "clock"],
     "custom/arch": {
       "format": "  ",
       "tooltip": false,
@@ -11,14 +11,26 @@
     },
     "hyprland/workspaces": {
       "format": "{name}",
+      "format": "{icon}",
       "tooltip": false,
       "all-outputs": true,
+      "format-icons": {
+        "1":"  ", 
+        "2":" 󰈹 ",
+        "3":"  ",
+        "4":"  ",
+        "5":"  ",
+        "6":"  ",
+        "7":"  ", 
+      },
       "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
       "4": [],
       "5": [],
+      "6": [],
+      "7": [],
       }
     },
     "clock": {
