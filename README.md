@@ -17,5 +17,5 @@ cp .config/* -r ~/.config
 #### Wallpapers
 I change wallpapers everyday. The wallpapers are available in this [Github Repo](https://github.com/D3Ext/aesthetic-wallpapers)
 
-> Using this rice can break your system and configurations. Use at your own rish
+> Using this rice can break your system and configurations. Use at your own risk
 
