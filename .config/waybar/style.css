@@ -71,7 +71,7 @@
 }
 
 #backlight, #battery {
-    border-radius: 0;
+    border-radius: 1rem;
 }
 
 #pulseaudio {
