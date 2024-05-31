@@ -24,7 +24,7 @@
         "format-time": "{H}h{M}m",
         "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
         "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
-        "interval": 30,
+        "interval": 10,
         "states": {
             "warning": 25,
             "critical": 10
