@@ -96,7 +96,7 @@
     color: @red;
 }
 
-#tray {
+#tray, #battery {
   margin-right: 1rem;
   border-radius: 1rem;
 }
