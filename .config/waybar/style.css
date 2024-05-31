@@ -1,105 +1,102 @@
-window#waybar {
-  background: transparent;
-  color: #FFFFFF;
-}
-
-window > box {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  /*background-color: rgba(5,9,40,0.4);*/
-}
+@import "mocha.css";
 
 * {
-    font-family: "MartianMono Nerd Font";
-    min-height: 28px;
-    border-radius: 15px;
+  font-family: FantasqueSansMono Nerd Font;
+  font-size: 17px;
+  min-height: 0;
 }
 
-.modules-right, .modules-center {
-    background-color: #000000;
-    opacity: 0.6;
-    color: white;
-}
-
-#custom-arch {
-  background-color: #000000;
-  font-size: 20px;
-  opacity: 0.5;
-  color: #FFFFFF;
-  margin-right: 5px;
-  padding-left: 0px;
-  padding-right: 5px
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
 }
 
 #workspaces {
-  border-radius: 2px;
-  background-color: transparent;
-  margin-left: 5px;
-  margin-right: 5px;
-
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
 }
 
 #workspaces button {
-  font-size: 22px;
-  background: transparent;
-  color: #FFFFFF;
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
 }
 
 #workspaces button.active {
-  font-size: 22px;
-  background: #333634;
-  color: #FFFFFF;
-  border-radius: 45px;
-  opacity: 8;
+  color: @sky;
+  border-radius: 1rem;
 }
 
-#pulseaudio {
-  font-size: 17px;
-  background-color: transparent;
-  color: #FFFFFF;
-  padding-left: 10px;
-  padding-right: 10px;
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 1rem;
 }
 
-#network {
-  font-size: 17px;
-  background-color: transparent;
-  color: #FFFFFF;
-  padding-left: 10px;
-  padding-right: 10px;
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
 }
 
 #clock {
-  font-size: 17px;
-  background-color: transparent;
-  color:#FFFFFF;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 0px;
+  color: @blue;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
 }
 
-.custom-spotify {
-    font-size: 17px;
-    padding-left: 10px;
-    padding-right: 15px;
-    background-color: transparent;
-    color: #FFFFFF;
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#backlight, #battery {
+    border-radius: 0;
+}
+
+#pulseaudio {
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+    border-radius: 1rem 0px 0px 1rem;
+    color: @lavender;
+}
+
+#custom-power {
+    margin-right: 1rem;
+    border-radius: 0px 1rem 1rem 0px;
+    color: @red;
 }
 
 #tray {
-    font-size: 17px;
-    background-color: transparent;
-    color: #FFFFFF;
-    padding-left: 10px;
-    padding-right: 5px;
+  margin-right: 1rem;
+  border-radius: 1rem;
 }
-
-#memory {
-    font-size: 17px;
-    background-color: transparent;
-    color: #FFFFFF;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-

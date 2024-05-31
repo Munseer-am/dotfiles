@@ -1,123 +1,55 @@
 {
-  "layer": "top",
-    "modules-left": ["custom/arch", "hyprland/window", "custom/spotify"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray", "network", "battery", "pulseaudio", "clock"],
-    "custom/arch": {
-      "format": "  ",
-      "tooltip": false,
-      "on-click": "rofi -show drun", 
-   "height": 30,
-    },
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/music"],
+    "modules-right": ["pulseaudio", "clock", "tray", "custom/lock", "custom/power"],
     "hyprland/workspaces": {
-      "format": "{name}",
-      "tooltip": false,
-      "all-outputs": true,
-      "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      }
+         "disable-scroll": true,
+         "sort-by-name": true,
+         "format": " {icon} ",
+         "format-icons": {
+             "default": "",
+         },
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
     },
     "clock": {
-      "interval": 1,
-      "format": " {:%I:%M}",
-      "format-alt": " {:%H:%M   %Y, %d %B, %A}",
-      "tooltip-format": "<tt><small>{calendar}</small></tt>",
-      "calendar": {
-        "mode"          : "year",
-        "mode-mon-col"  : 3,
-        "weeks-pos"     : "right",
-        "on-scroll"     : 1,
-        "format": {
-        "months":     "<span color='#ffead3'><b>{}</b></span>",
-        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                  }
-                  }
-      },              
-      "actions":  {
-        "on-click-right": "mode",
-        "on-click-forward": "tz_up",
-        "on-click-backward": "tz_down",
-        "on-scroll-up": "shift_up",
-        "on-scroll-down": "shift_down"
+        "timezone": "Asia/Kolkata",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d/%m/%Y}",
+        "format": " {:%H:%M}"
     },
-
-    
     "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": " ",
-    "format-icons": {
-        "headphone": "",
-        "hands-free": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", "  "]
-      },
-      "scroll-step": 1,
-      "on-click": "pavucontrol",
-      "ignored-sinks": ["Easy Effects Sink"]
-    },
-    "network": {
-      "interface": "wlp0s12f0",
-      "format": "{ifname}",
-      "format-wifi": "<span color='#b4befe'>   </span>{essid}",
-      "format-ethernet": "  {ifname}",
-      "format-disconnected": "<span color='#b4befe'>󰖪  </span>No Network",
-      "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-      "tooltip-format-ethernet": "{ifname} ",
-      "tooltip-format-disconnected": "Disconnected",
-      "max-length": 50,
-      "on-click": "nm-applet",
-      "ignored-sinks": ["Easy Effects Sink"]
-    },
-
-    "custom/spotify": {
-      "exec": "/usr/bin/python ~/.config/waybar/scripts/mediaplayer.py --player spotify",
-      "format": "{} ",
-      "return-type": "json",
-      "on-click": "playerctl play-pause",
-      "on-scroll-up": "playerctl next",
-      "on-scroll-down": "playerctl previous",
-      "max-length": 45,
-    },
-    "tray": {
-      "spacing": 10,
-      "show-passive-items": true,
-    },
-    "battery": {
-        "format": "<span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "format-time": "{H}h{M}m",
-        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>    {capacity}%",
-        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
-        "interval": 30,
-        "states": {
-            "warning": 25,
-            "critical": 10
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
         },
+        "on-click": "pavucontrol"
+    },
+    "custom/lock": {
         "tooltip": false,
-        "on-click": "2"
+        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+        "format": "",
     },
-
-    "memory": {
-      "interval": 30,
-      "format": "  {percentage}%",
-      "max-length": 30
-    },
-    
-    "hyprland/window": {
-       "format": "{initialClass}",
-    },	
-
- }
-
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout &",
+        "format": "󰗽 "
+    }
+}
