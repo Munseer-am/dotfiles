@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
+export ZDOTDIR=~/.config/zsh/
 # Source ZSH configs
-
 source ${ZDOTDIR}/environment.zsh # Source envvars
 source ${ZDOTDIR}/profile.zsh # Source zprofile
 source ${ZDOTDIR}/options.zsh # Source zsh options
