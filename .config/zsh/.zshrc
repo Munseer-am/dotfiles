@@ -13,4 +13,7 @@ source ${ZDOTDIR}/zgenom.zsh # Source zgenom for plugins
 source ${ZDOTDIR}/keybinds-late.zsh # Source late load keybinds
 
 PROMPT='%F{yellow}%3~%f $ '
-
+export BAT_THEME="Monokai Extended"
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+eval "$(zoxide init zsh)"
