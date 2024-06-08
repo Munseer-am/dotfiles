@@ -1,33 +1,12 @@
-[colors.bright]
-black = "0x444b6a"
-blue = "0x7da6ff"
-cyan = "0x0db9d7"
-green = "0xb9f27c"
-magenta = "0xbb9af7"
-red = "0xff7a93"
-white = "0xacb0d0"
-yellow = "0xff9e64"
+import = [
+  "~/.config/alacritty/themes/themes/coolnight.toml"
+]
 
-[colors.normal]
-black = "0x32344a"
-blue = "0x7aa2f7"
-cyan = "0x449dab"
-green = "0x9ece6a"
-magenta = "0xad8ee6"
-red = "0xf7768e"
-white = "0x9699a8"
-yellow = "0xe0af68"
-
-[colors.primary]
-background = "0x1a1b26"
-foreground = "0xefefef"
-
-[cursor.style]
-blinking = "Always"
-shape = "Block"
+[env]
+TERM = "xterm-256color"
 
 [font]
-size = 10.0
+size = 14.0
 
 [font.bold]
 family = "monospace"
@@ -57,11 +36,14 @@ args = ["--login"]
 program = "/bin/zsh"
 
 [window]
+decorations = "Buttonless"
 opacity = 0.8
+blur = true
+option_as_alt = "Both"
 
 [window.padding]
-x = 13
-y = 13
+x = 10
+y = 10
 
 [window.position]
 x = 0
