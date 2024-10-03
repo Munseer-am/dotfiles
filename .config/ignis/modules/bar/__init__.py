@@ -17,7 +17,7 @@ def bar(monitor: int) -> Widget.Window:
         child=Widget.CenterBox(
             css_classes=["bar-widget"],
             start_widget=Widget.Box(child=[workspaces()]),
-            center_widget=Widget.Box(child=[pinned_apps()]),
+            # center_widget=Widget.Box(child=[pinned_apps()]),
             end_widget=Widget.Box(child=[tray(), kb_layout(), clock(monitor)]),
         ),
         css_classes=["unset"],
