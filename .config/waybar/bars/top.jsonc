@@ -97,6 +97,7 @@
     "group/brightness",
     "group/sound",
     "group/connection",
+    "battery",
     "group/together",
     "group/cnoti",
     "tray",
