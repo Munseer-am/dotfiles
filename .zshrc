@@ -15,3 +15,4 @@ source ${ZDOTDIR}/keybinds-late.zsh # Source late load keybinds
 PROMPT='%F{yellow}%3~%f $ '
 export BAT_THEME="Monokai Extended"
 eval "$(zoxide init zsh)"
+neofetch
